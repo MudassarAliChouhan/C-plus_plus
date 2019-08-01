@@ -1,3 +1,35 @@
+void gotoxy(int , int);
+#define DOWN 80
+#define UP 72
+int select(int max,int x,int y)
+{
+	int chose=0, value=1;
+	int min = y;
+	do
+	{
+		if(chose==DOWN)
+		{
+			if(y < max)
+			{
+				y++; value++;
+			}
+		}
+		else if(chose==UP)
+		{
+			if(y > min)
+			{
+				y--; value--;
+			}
+		}
+		gotoxy(x,y);
+		printf("->");
+		chose=getch();
+		gotoxy(x,y);
+		printf("  ");
+	}while(chose!=13);
+	
+	return value;
+}
 void gotoxy(int x, int y)
 {
 	COORD c;
@@ -76,7 +108,7 @@ int print(opt *o,int i)
 	printf("\n\n\n\n\n\n\n\n");
 	while(j<=i)
 	{
-		printf("\n\t\t %d. %s\n" ,j, o[j-1]);
+		printf("\n\t\t %s\n" ,o[j-1]);
 		j++;
 	}
 	return j;

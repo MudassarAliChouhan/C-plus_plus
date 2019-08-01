@@ -1,6 +1,5 @@
 #define STUDENT_FILE "Student.dat"
 #define COLLAGE_FILE "Institude.dat"
-
 #define STUDENT_TMP "Student.dat.Tmp"
 #define COLLAGE_TMP "Institude.dat.Tmp"
 
@@ -63,8 +62,13 @@ class student:public identity
 class collage:public identity
 {
 	private:
-	char 				streams[5][12],
-						degrees[20][30];
+	char 				subjects[20][30],
+						degrees[7][7];
 	public:
+		int setSubj(char*,int);
+		int setDegree(char*,int);
+		
+		char* getSubj(int);
+		char* getDegree(int);
 	
 };

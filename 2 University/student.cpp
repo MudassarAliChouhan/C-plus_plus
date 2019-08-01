@@ -1,4 +1,3 @@
-
 	/// Set Functions :)
 
 void student::setStream(char *s)
