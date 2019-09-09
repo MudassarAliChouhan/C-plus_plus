@@ -14,9 +14,7 @@ int endf(int size)
 {
     int n = size;
     for(int i=1; i<size; i++)
-    {
         n = n * i;
-    }
     return n;
 }
 void combination(char *str)
