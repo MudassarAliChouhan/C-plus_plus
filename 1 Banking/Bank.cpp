@@ -23,7 +23,7 @@ class Bank
 		void search(char *n);
 		void del(char *n);
 		void edit(char *n);
-		void viewAll();
+		int viewAll();
 };
 		
 int main()
@@ -71,17 +71,22 @@ void Bank::del(char *n)
 	remove("Bank.dat");
 	rename("Bank.dat.tmp","Bank.dat");
 }
-void Bank::viewAll()
+int Bank::viewAll()
 {
 	ifstream fin;
 	fin.open("Bank.dat",ios::in|ios::binary);
-	fin.read((char*)this,sizeof(*this));
+	if(!fin)
+	{
+		cout<<"File not found!";
+		return 0;
+	}
 	while(!fin.eof())
 	{
-		show();
 		fin.read((char*)this,sizeof(*this));
+		show();
 	}
 	fin.close();
+	return 1;
 }
 void Bank::show()
 {

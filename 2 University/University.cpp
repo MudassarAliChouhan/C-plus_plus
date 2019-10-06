@@ -10,36 +10,31 @@
 
 using namespace std;
 
-#include "UniFun.h"
-#include "output.c"
-#include "Subject.c"
-#include "collage.cpp"
-#include "idintity.cpp"
-#include "student.cpp"
+#include "University.h"
 
 int main()
 {
-	select(30,38,5);
-	
-	exit(0);
-	
-	
 	while(1)
 	{
 		system("cls");
+		title(" Main Page ");
 		switch(main_m())
 		{
-			case 49:
+			case 1:
 				studentMenu();
 				break;
-			case 50:
+			case 2:
 				collageMenu();
 				break;
-			case 'e':
+			case 5:
+				subjectMenu();
+				break;
+			case 6:system("cls");
+				title(" Good Bye... ");
+				puts("\n\n\tThank You for using our Software.");
+				Sleep(1000);
 				exit(0);
 				break;
 		}
 	}
-	
-	//getch();
 }
