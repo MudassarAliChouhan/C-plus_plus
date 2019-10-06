@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300,
+    "terminal.integrated.fontSize": 25,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.clearPreviousOutput": true
+}
